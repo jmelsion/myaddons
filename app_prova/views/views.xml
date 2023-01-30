@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="app_prova.list">
+      <field name="name">app_prova list</field>
+      <field name="model">app_prova.app_prova</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="tarea"/>
+          <field name="prioridad"/>
+          <field name="urgente"/>
+          <field name="realizada"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="app_prova.action_window">
+      <field name="name">Listado de Tareas Pendiente</field>
+      <field name="res_model">app_prova.app_prova</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="app_prova.action_server">
+      <field name="name">app_prova server</field>
+      <field name="model_id" ref="model_app_prova_app_prova"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Listado de Tareas" id="app_prova.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Opciones Lista Tareas" id="app_prova.menu_1" parent="app_prova.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Mostrar Lista" id="app_prova.menu_1_list" parent="app_prova.menu_1"
+              action="app_prova.action_window"/>
+
+  </data>
+</odoo>
