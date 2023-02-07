@@ -10,7 +10,6 @@
             -->
             <calendar date_start="date_assign" date_stop="date_end" color="project_id">
                 <field name="name" />
-                <field name="user_id" />
             </calendar>
         </field>
     </record>
@@ -18,7 +17,7 @@
     <record id='action_tareas_calender' model='ir.actions.act_window'>
         <field name="name">Mis tareas (Calendario)</field>
         <field name="res_model">project.task</field>
-        <field name="view_mode">calendar,tree,form</field>
+        <field name="view_mode">calendar,kanban,tree,form</field>
         <!-- Indicamos como contexto que la vista de referencia es la vista tareas_calender_view
         mas información en https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html 
         -->
